@@ -27,3 +27,4 @@ C:\Users\victor.galvao\Desktop\GalvaoLanches\GalvaoLanches\obj\Debug\net8.0\refi
 C:\Users\victor.galvao\Desktop\GalvaoLanches\GalvaoLanches\obj\Debug\net8.0\GalvaoLanches.pdb
 C:\Users\victor.galvao\Desktop\GalvaoLanches\GalvaoLanches\obj\Debug\net8.0\GalvaoLanches.genruntimeconfig.cache
 C:\Users\victor.galvao\Desktop\GalvaoLanches\GalvaoLanches\obj\Debug\net8.0\ref\GalvaoLanches.dll
+C:\Users\victor.galvao\Desktop\GalvaoLanches\GalvaoLanches\obj\Debug\net8.0\GalvaoLanches.sourcelink.json
