@@ -1,14 +1,23 @@
 ﻿@model IEnumerable<GalvaoLanches.Models.Lanche>
 
-<div>
-    <h2>Todos os lanches</h2>
-</div>
+<div class="container my-5">
+    <h2 class="text-center mb-4">@ViewData["Titulo"]</h2>
 
-@foreach(var lanche in Model)
-{
-    <div>
-        <h4>@lanche.Nome</h4>
-        <p><img src="@lanche.ImagemUrl"></p>
-        <h3>Preço: @lanche.Preco.ToString("c")</h3>
+    <div class="row">
+        @foreach (var lanche in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="@lanche.ImagemUrl" class="card-img-top img-fluid rounded-top" alt="@lanche.Nome">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">@lanche.Nome</h5>
+                        <p class="card-text text-muted mb-2">@lanche.DescricaoCurta</p>
+                        <div class="mt-auto">
+                            <span class="fw-bold text-primary">@lanche.Preco.ToString("c")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-}
+</div>

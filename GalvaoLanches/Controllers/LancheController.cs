@@ -14,7 +14,12 @@ namespace GalvaoLanches.Controllers
 
         public IActionResult List()
         {
+            ViewData["Titulo"] = "Todos os lanches";
+         
+
             var lanches = _lancheRepository.lanches;
+        
+
             return View(lanches);
         }
     }
