@@ -1,4 +1,5 @@
 ﻿using GalvaoLanches.Repositories.Interfaces;
+using GalvaoLanches.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GalvaoLanches.Controllers
@@ -14,13 +15,11 @@ namespace GalvaoLanches.Controllers
 
         public IActionResult List()
         {
-            ViewData["Titulo"] = "Todos os lanches";
-         
+            var lanchesListViewModel = new LancheListViewModel();
+            lanchesListViewModel.Lanches = _lancheRepository.lanches;
+            lanchesListViewModel.CategoriaAtual = "Categoria A";
 
-            var lanches = _lancheRepository.lanches;
-        
-
-            return View(lanches);
+            return View (lanchesListViewModel);
         }
     }
 }

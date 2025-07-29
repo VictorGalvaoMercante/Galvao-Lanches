@@ -1,10 +1,11 @@
-﻿@model IEnumerable<GalvaoLanches.Models.Lanche>
+﻿
+@model LancheListViewModel
 
 <div class="container my-5">
-    <h2 class="text-center mb-4">@ViewData["Titulo"]</h2>
+    <h2 class="text-center mb-4">@Model.CategoriaAtual</h2>
 
     <div class="row">
-        @foreach (var lanche in Model)
+        @foreach (var lanche in Model.Lanches)
         {
             <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100 shadow-sm border-0">
