@@ -1,4 +1,5 @@
 ﻿using GalvaoLanches.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace GalvaoLanches.Models
 {
@@ -47,14 +48,13 @@ namespace GalvaoLanches.Models
         {
             var carrinhoCompraItem = _appDbContext.CarrinhoCompraItens.SingleOrDefault(
                 c => c.Lanche.LancheId == lanche.LancheId && c.CarrinhoCompraId == CarrinhoCompraId);
-            var quantidadeLocal = 0;
+
             if (carrinhoCompraItem != null)
             {
                 if (carrinhoCompraItem.Quantidade > 1)
                 {
                     carrinhoCompraItem.Quantidade--;
-                    quantidadeLocal = carrinhoCompraItem.Quantidade;
-
+                    
                 }
                 else
                 {
@@ -62,8 +62,28 @@ namespace GalvaoLanches.Models
                 }
             }
             _appDbContext.SaveChanges();
-            return quantidadeLocal;
         }
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
+        {
+            return CarrinhoCompraItens ?? (CarrinhoCompraItens = _appDbContext.CarrinhoCompraItens
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                .Include(c => c.Lanche)
+                .ToList());
+        }
+        public void LimparCarrinho()
+        {
+            var carrinhoCompraItens = _appDbContext.CarrinhoCompraItens
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId);
+            _appDbContext.CarrinhoCompraItens.RemoveRange(carrinhoCompraItens);
+            _appDbContext.SaveChanges();
+        }
+        public decimal GetCarrinhoCompraTotal()
+        {
+            return _appDbContext.CarrinhoCompraItens
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                .Select(c => c.Lanche.Preco * c.Quantidade).Sum();
+        }
+        
 
     }
 }
