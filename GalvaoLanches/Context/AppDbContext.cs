@@ -10,5 +10,6 @@ namespace GalvaoLanches.Context
         }
         public DbSet<Categoria> Categorias { get; set; } //Criação da tabela Categoria no banco de dados
         public DbSet<Lanche> Lanches { get; set; } //Criação da tabela Lanche no banco de dados
+        public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
     }
 }

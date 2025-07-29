@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GalvaoLanches")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bea3e49957c2188a8077f358c4581f2a7d114ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bf27c2c5792476a9e42e03972bd4d989d31a918")]
 [assembly: System.Reflection.AssemblyProductAttribute("GalvaoLanches")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GalvaoLanches")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
